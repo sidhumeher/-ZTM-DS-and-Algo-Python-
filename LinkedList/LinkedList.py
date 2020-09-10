@@ -97,10 +97,12 @@ class LinkedList():
             previous.set_next(current.get_next())
             
     def printList(self):
+        array = []
         current = self.head
         while current is not None:
-            print(current.data)
+            array.append(current.data)
             current = current.get_next()
+        print(array)
 
     
 if __name__ == '__main__':
@@ -113,7 +115,7 @@ if __name__ == '__main__':
     list1.head.next_node = item2
     item2.next_node = item3
     
-    # list1.printList()
+    list1.printList()
     
     list1.insert_atEnd(4)
     # list1.printList()
