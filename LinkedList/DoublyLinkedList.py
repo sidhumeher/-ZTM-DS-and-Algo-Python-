@@ -168,4 +168,3 @@ if __name__ == '__main__':
     # Delete Tail
     list1.delete(5)
     list1.printList()
-    
