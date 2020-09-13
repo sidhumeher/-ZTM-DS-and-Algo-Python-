@@ -104,6 +104,24 @@ class LinkedList():
             current = current.get_next()
         print(array)
 
+    def reverseLinkedList(self):
+        
+        if self.head is None:
+            print('Linked list is empty')
+            return
+
+        prev = None
+        curr = self.head
+        curr_next = None
+        
+        while curr is not None:
+            curr_next = curr.get_next()
+            curr.set_next(prev)
+            prev = curr
+            curr = curr_next
+        
+        self.head = prev
+
     
 if __name__ == '__main__':
     list1 = LinkedList()
@@ -115,7 +133,7 @@ if __name__ == '__main__':
     list1.head.next_node = item2
     item2.next_node = item3
     
-    list1.printList()
+    # list1.printList()
     
     list1.insert_atEnd(4)
     # list1.printList()
@@ -127,7 +145,7 @@ if __name__ == '__main__':
     # list1.printList()
     
     list1.delete(5)
-    list1.printList()
+    # list1.printList()
     
     size = list1.size()
     print('List size:', size)
@@ -135,3 +153,6 @@ if __name__ == '__main__':
     found = list1.search(3)
     print('Found item:', found.get_data())
     
+    list1.printList()
+    list1.reverseLinkedList()
+    list1.printList()

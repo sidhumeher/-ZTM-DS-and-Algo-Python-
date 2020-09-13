@@ -126,6 +126,23 @@ class DoublyLinkedList():
             current = current.getNextNode()
             
         print(array)
+        
+    def reverseDoublyLinkedList(self):
+        
+        if self.head is None:
+            print('List is empty')
+            return 
+        
+        prev = None
+        curr = self.head
+        curr_next = None
+        
+        while curr is not None:
+            curr_next = curr.getNextNode()
+            curr.setNextNode(prev)
+            prev = curr
+            curr = curr_next
+        self.head = prev
 
         
 if __name__ == '__main__':
@@ -167,4 +184,7 @@ if __name__ == '__main__':
     
     # Delete Tail
     list1.delete(5)
+    list1.printList()
+    
+    list1.reverseDoublyLinkedList()
     list1.printList()
