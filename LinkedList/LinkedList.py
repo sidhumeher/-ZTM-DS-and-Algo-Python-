@@ -109,7 +109,7 @@ class LinkedList():
         if self.head is None:
             print('Linked list is empty')
             return
-
+ 
         prev = None
         curr = self.head
         curr_next = None

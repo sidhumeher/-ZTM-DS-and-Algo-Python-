@@ -132,7 +132,11 @@ class DoublyLinkedList():
         if self.head is None:
             print('List is empty')
             return 
-        
+    
+        '''
+        if self.head.getNextNode() is None:
+            return self.head
+        '''
         prev = None
         curr = self.head
         curr_next = None
