@@ -58,8 +58,52 @@ class Graph():
         print(nodes)
         
         edges = 'Edges:'
-        edges += self.generateEdges(graph)
+        for edge in self.generateEdges(graph):
+            edges += str(edge) + ' '
         print(edges)
+
+    def findPath(self, startNode, endNode, path=None):
+        if path is None:
+            path = []
+            
+        graph = self.graph_dict
+        path += [startNode]
+        
+        if startNode == endNode:
+            return path
+        if startNode not in graph:
+            return None
+        
+        for node in graph[startNode]:
+            if node not in path:
+                extendPath = self.findPath(node, endNode, path)
+                
+                if extendPath:
+                    return extendPath
+            
+        return None
+    
+    def findAllPaths(self, startNode, endNode, path):
+        
+        if path is None:
+            path = []
+        graph = self.graph_dict
+        path += [startNode]
+        
+        if startNode == endNode:
+            return path
+
+        if startNode == None:
+            return None
+        
+        paths = []
+        for node in graph[startNode]:
+            if node not in path:
+                extend_path = self.findAllPaths(node, endNode, path)
+                
+                for path in extend_path:
+                    paths.append(path)
+        return paths
 
 
 if __name__ == '__main__':
@@ -88,4 +132,15 @@ if __name__ == '__main__':
     
     edges = g.generateEdges(graph)
     print(edges)
+    
+    # Find path from a to b
+    path = g.findPath('a', 'b', [])
+    print(path)
+    
+    # Print graph
+    g.print()
+    
+    # Find all paths
+    # paths = g.findAllPaths('a', 'b', [])
+    # print(paths)
     
