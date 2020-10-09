@@ -48,7 +48,7 @@ def reverseSublist(head, start, finish):
         
     return head
 
-# Time complexity depends on search for finish node. O(finish)
+# Time complexity depends on search for finish node. O(f)
 
 
 if __name__ == '__main__':
