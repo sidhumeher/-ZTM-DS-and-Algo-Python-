@@ -43,10 +43,12 @@ def mergeSort(alist):
             alist[k] = righthalf[j]
             j = j + 1
             k = k + 1
+    
     print("Merging ", alist)
 
     
 if __name__ == '__main__':
     
-    inputList = [7, 5, 8, 3, 1, 9, 4, 2, 10]
+    # inputList = [7, 5, 8, 3, 1, 9, 4, 2, 10]
+    inputList = [7, 5, 8, 3]
     mergeSort(inputList)
